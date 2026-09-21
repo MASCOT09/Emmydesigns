@@ -70,12 +70,22 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
         {previewSrc ? (
           <figure className="mt-8 overflow-hidden rounded-[1.25rem] border border-border bg-surface p-3 md:mt-10 md:rounded-[1.5rem] md:p-4">
-            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[1rem] border border-border bg-background md:aspect-auto md:min-h-[28rem]">
+            <div
+              className={`relative w-full overflow-hidden rounded-[1rem] border border-border bg-background ${
+                slug === "bosak-fintech-marketing"
+                  ? "aspect-[4/3] md:aspect-[16/10] md:min-h-[22rem]"
+                  : "aspect-[3/4] md:aspect-auto md:min-h-[28rem]"
+              }`}
+            >
               <Image
                 src={previewSrc}
                 alt={previewAlt}
                 fill
-                className="object-contain object-top"
+                className={
+                  slug === "bosak-fintech-marketing"
+                    ? "object-cover object-top"
+                    : "object-contain object-top"
+                }
                 sizes="(max-width: 768px) 100vw, 48rem"
                 priority
               />

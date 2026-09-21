@@ -92,6 +92,26 @@ export const site = {
         "HESTORA marketing site — hero, about, and services sections",
       liveUrl: "https://beloved-need-010230.framer.app/",
     },
+    {
+      slug: "bosak-fintech-marketing",
+      title: "Fintech marketing that turns complexity into confidence",
+      description:
+        "Brand and landing experience for BOSAK — a payments and cash-flow platform positioned for global businesses, with product UI woven into the story.",
+      body: [
+        "BOSAK sits in a crowded fintech category where every homepage promises “smarter money.” The risk is sounding interchangeable: dense feature lists, vague trust badges, and CTAs that compete before visitors understand the product. The site needed to feel credible to finance-minded buyers while staying approachable for founders evaluating their first cross-border stack.",
+        "The narrative anchors on a clear promise — “Your money. Moving smarter.” — and supports it with proof, not jargon. Above the fold: availability for global businesses, dual CTAs (“Get started” and “Explore BOSAK”), and a live-style dashboard preview showing balance, revenue, expenses, and cash flow so the product reads tangible in seconds.",
+        "Mid-page structure follows how teams actually evaluate tools. A “One platform / Complete financial control” section breaks value into Payments (cross-border routes such as Lagos → London), Cash Flow visibility, and Insights for decision-making — each with a focused headline and short outcome copy instead of feature dumps.",
+        "Visual storytelling carries the rest of the scroll: a “See the bigger picture” analytics block, a global cities motif (“Money shouldn’t have borders”), and a security band (256-bit encryption, real-time monitoring, fraud detection, MFA) that answers compliance concerns without breaking rhythm. Logo strip social proof (NOVA, ARC, VANTA, LUMA, MOTION) adds credibility between story beats.",
+        "The closing CTA — “Build a smarter financial future” — mirrors the hero and drives back to signup. Built and shipped in Framer for responsive polish and fast iteration; the live experience is at similar-championship-089222.framer.app.",
+      ],
+      tags: ["Web design", "Fintech", "Framer"],
+      image: "/case-studies/bosak-card.png",
+      imageAlt: "BOSAK homepage — Your money. Moving smarter.",
+      detailImage: "/case-studies/bosak-detail.png",
+      detailImageAlt:
+        "BOSAK marketing site — hero with dashboard preview and platform overview",
+      liveUrl: "https://similar-championship-089222.framer.app/",
+    },
   ],
   copyright: `©${new Date().getFullYear()} Emmy`,
 } as const;
