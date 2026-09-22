@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
-import { site } from "@/data/site";
+import { site, type CaseStudy } from "@/data/site";
 import { previewGradients } from "@/lib/previewGradients";
 
 export function CaseStudiesList() {
@@ -19,15 +19,15 @@ export function CaseStudiesList() {
 
   return (
     <ul className="flex flex-col gap-5 md:gap-6">
-      {site.caseStudies.map((study, index) => {
+      {site.caseStudies.map((study: CaseStudy, index) => {
         const href = `/case-studies/${study.slug}`;
-        const image = "image" in study ? study.image : undefined;
-        const imageAlt =
-          "imageAlt" in study && study.imageAlt ? study.imageAlt : study.title;
+        const { title, slug } = study;
+        const image = study.image;
+        const imageAlt = study.imageAlt ?? title;
         const hasImage = Boolean(image);
 
         return (
-          <li key={study.slug}>
+          <li key={slug}>
             <article
               className="overflow-hidden rounded-[1.35rem] border border-border bg-surface md:rounded-[1.5rem]"
               onMouseEnter={() => prefetchStudy(study.slug)}

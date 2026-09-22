@@ -123,3 +123,16 @@ export type CaseStudy = (typeof site.caseStudies)[number];
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
   return site.caseStudies.find((study) => study.slug === slug);
 }
+
+export function getCaseStudyPreview(study: CaseStudy) {
+  const media = study as {
+    title: string;
+    image?: string;
+    detailImage?: string;
+    imageAlt?: string;
+    detailImageAlt?: string;
+  };
+  const src = media.detailImage || media.image;
+  const alt = media.detailImageAlt || media.imageAlt || `${media.title} preview`;
+  return { src, alt };
+}

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCaseStudyBySlug, site } from "@/data/site";
+import { getCaseStudyBySlug, getCaseStudyPreview, site } from "@/data/site";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -28,18 +28,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
   const study = getCaseStudyBySlug(slug);
   if (!study) notFound();
 
-  const previewSrc =
-    "detailImage" in study && study.detailImage
-      ? study.detailImage
-      : "image" in study
-        ? study.image
-        : undefined;
-  const previewAlt =
-    "detailImageAlt" in study && study.detailImageAlt
-      ? study.detailImageAlt
-      : "imageAlt" in study && study.imageAlt
-        ? study.imageAlt
-        : `${study.title} preview`;
+  const { src: previewSrc, alt: previewAlt } = getCaseStudyPreview(study);
 
   return (
     <div className="relative min-h-dvh">
